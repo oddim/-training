@@ -14,7 +14,7 @@ namespace variable types
             byte treeAge  = 13;
             int lengthMm = 219;
             uint lengthCm = 3040100;
-            float massKg = -5.9f;
+            float forseN = -5.9f;
             char firstLetter = 'q';
             double distanceBetweenCities = 10212.5;
             string nameCompany = "Беседка";
