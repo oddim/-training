@@ -10,17 +10,16 @@ namespace variable types
     {
         static void Main(string[] args)
         {
-            bool daytime = true;
+            bool isDaytime = true;
             byte treeAge  = 13;
             int lengthMm = 219;
             uint lengthCm = 3040100;
-            float forseN = -5.9f;
+            float forceArchimedes = -5.9f;
             char firstLetter = 'q';
             double distanceBetweenCities = 10212.5;
             string nameCompany = "Беседка";
             short accountBalance = -1324;
             ushort amountGold = 15234;
-
         }
     }
 }
