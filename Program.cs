@@ -10,7 +10,10 @@ namespace Baza
     {
         static void Main(string[] args)
         {
-            string userName, userAge, userProfession, userSex;
+            string userName;
+            string userAge; 
+            string userProfession;
+            string userSex;
             Console.WriteLine("Заполните анкету");
             Console.Write("Ваше имя и фамилию: ");
             userName = Console.ReadLine();
