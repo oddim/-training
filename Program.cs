@@ -4,28 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baza
+namespace Cslight
 {
-    internal class StringsWork
+    internal class Program
     {
         static void Main(string[] args)
         {
-            string userName;
-            string userAge; 
-            string userProfession;
-            string userSex;
-            Console.WriteLine("Заполните анкету");
-            Console.Write("Ваше имя и фамилию: ");
-            userName = Console.ReadLine();
-            Console.Write("Ваш возраст: ");
-            userAge = Console.ReadLine();
-            Console.Write("Ваш пол: ");
-            userSex = Console.ReadLine();
-            Console.Write("Ваша профессия: ");
-            userProfession = Console.ReadLine();
+            int quantityPic = 52;
+            int series1Pic = 3;
+            int showSeriesPic;
+            int extraShowPic;
+            showSeriesPic = quantityPic / series1Pic;
+            extraShowPic = quantityPic % series1Pic;
+            Console.WriteLine($"Вы можете вывести рядов картинок {showSeriesPic}, {extraShowPic} уже сверх меры ");
 
-            Console.WriteLine($"Вас зовут {userName}. Вам {userAge} и вы {userSex}. Ваша профессия - {userProfession}");
-            Console.ReadKey();
         }
     }
 }
