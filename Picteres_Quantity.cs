@@ -10,13 +10,11 @@ namespace Cslight
     {
         static void Main(string[] args)
         {
-            int quantityPic = 52;
-            int series1Pic = 3;
-            int showSeriesPic;
-            int extraShowPic;
-            showSeriesPic = quantityPic / series1Pic;
-            extraShowPic = quantityPic % series1Pic;
-            Console.WriteLine($"Вы можете вывести рядов картинок {showSeriesPic}, {extraShowPic} уже сверх меры ");
+            int quantityPictures = 52;
+            int picturesInRow  = 3;
+            int seriesPictures = quantityPictures / picturesInRow ;
+            int extraPictures = quantityPictures % picturesInRow ;
+            Console.WriteLine($"Вы можете вывести рядов картинок {seriesPictures}, {extraPictures} уже сверх меры ");
 
         }
     }
