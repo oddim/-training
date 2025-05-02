@@ -12,12 +12,11 @@ namespace ShopKristalls
         {
             int priceCristalsUnit = 4;
             Console.Write("Сколько у вас золото в кошельке?: ");
-            int myGold = Convert.ToInt32(Console.ReadLine());
+            int amountGold = Convert.ToInt32(Console.ReadLine());
             Console.Write("Сколько кристаллов вы хотите купить?: ");
-            int buyCristals = Convert.ToInt32(Console.ReadLine());
-            int myCristals = myGold / priceCristalsUnit;
-            myGold = myGold - (priceCristalsUnit * buyCristals);
-            Console.WriteLine($"Вы купили {buyCristals} кристаллов. У вас осталось золота {myGold} ");
+            int buyQuantityCristals = Convert.ToInt32(Console.ReadLine());
+            amountGold = amountGold - (priceCristalsUnit * buyQuantityCristals);
+            Console.WriteLine($"Вы купили {buyQuantityCristals} кристаллов. У вас осталось золота {amountGold} ");
           }
     }
 }
