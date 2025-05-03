@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +11,16 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             int timePersonClinic = 10;
+            int minutesHour = 60;
+
             Console.Write("Сколько людей в очереди? :");
             int lineAmountPerson = Convert.ToInt32(Console.ReadLine());
-            int hourWainting = timePersonClinic * lineAmountPerson / 60;
-            int minutesWaiting = timePersonClinic*lineAmountPerson - hourWainting*60;
-            Console.WriteLine($"Вы будете стоять в очереди {hourWainting} часа и {minutesWaiting} минут");
+
+            int lineTime = timePersonClinic * lineAmountPerson;
+            int hourWaiting = lineTime / minutesHour;
+            int minutesWaiting = lineTime - hourWaiting * minutesHour;
+
+            Console.WriteLine($"Вы будете стоять в очереди {hourWaiting} часа и {minutesWaiting} минут");
         }
     }
 }
