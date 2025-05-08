@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,24 +6,21 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
-    internal class ExitProgramm
+    internal class Programm
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите exit для выхода из программы");
+            string commandExit = "exit";
+            string writingInput = "";
 
-            while (true)
+            for (int i = 0; writingInput != commandExit; i++)
             {
-                string writingExit = Console.ReadLine();
-
-                if (writingExit == "exit")
-                {
-                    Console.WriteLine("Вы вышли из программы");
-                    break;
-                }
-
-                Console.WriteLine("Программа всё еще работает");
+                Console.WriteLine("Программа работает");
+                Console.WriteLine("Введите exit для выхода из программы");
+                writingInput = Console.ReadLine();
             }
+
+            Console.WriteLine("Программа завершена");
         }
     }
 }
