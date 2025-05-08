@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
-    internal class Programm
+    internal class ExitProgramm
     {
         static void Main(string[] args)
         {
             string commandExit = "exit";
             string writingInput = "";
 
-            for (int i = 0; writingInput != commandExit; i++)
+            while (commandExit != writingInput)
             {
-                Console.WriteLine("Программа работает");
+                Console.WriteLine("Программа всё еще работает");
                 Console.WriteLine("Введите exit для выхода из программы");
                 writingInput = Console.ReadLine();
             }
