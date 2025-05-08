@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +11,11 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             Console.WriteLine("Введите количество раз вывода сообщения: ");
-            int amountWriting =  Convert.ToInt32(Console.ReadLine());
+            int amountIteration =  Convert.ToInt32(Console.ReadLine());
             
-            while (amountWriting > 0)
+            for (int i = 0; i < amountIteration; i++)
             {
                 Console.WriteLine("Message");
-                amountWriting--;
             }
         }
     }
