@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,10 +14,9 @@ namespace ConsoleApp4
             int stepNumber = 7;
             int maxNumber = 789;
 
-            for (int i = 0; beginingNumber <= maxNumber; i++)
+            for (int i = beginingNumber; i <= maxNumber; i += stepNumber)
             {
-                Console.WriteLine(beginingNumber);
-                beginingNumber = beginingNumber + stepNumber;
+                Console.WriteLine(i);
             }
         }
     }
