@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            const string InterpretationWordСonstant = "Константа"; // Постоянная величина в ряду изменяющихся
+            const string InterpretationWordVariable = "Переменная" ;//Переменная (программирование) — поименованная, либо адресуемая иным способом область памяти
+            const string InterpretatioWordIteration = "Итерация";//организация обработки данных, при которой действия повторяются многократно, не приводя при этом к вызовам самих себя
+            const string RandomNumberCommand = "Рандом";
+            const string ClearConsole = "Очистить консоль";
+            const string EndProgramm = "Выход";
+
+            string userInput = "";
+                           
+                while (userInput != EndProgramm)
+                {
+                    Console.WriteLine("Введите нужную команду для исполнения \n \n Для толкования некоторых слов есть команды - 'Константа', 'Переменная', 'Итерация' \n Чтобы получить рандомное число - 'Рандом' \n Если хотите очистить консоль - 'Очистить консоль' \n Для завершения программы - 'Выход'");
+                    userInput = Console.ReadLine();
+
+                        if (userInput != EndProgramm)
+                        {
+                            switch (userInput)
+                            {
+                            case InterpretationWordСonstant:
+                                Console.WriteLine("Константа - это постоянная величина в ряду изменяющихся ");
+                                break;
+
+                            case InterpretationWordVariable:
+                                Console.WriteLine("Переменная (программирование) — поименованная, либо адресуемая иным способом область памяти");
+                                break;
+
+                            case InterpretatioWordIteration:
+                                Console.WriteLine("Итерация - это организация обработки данных, при которой действия повторяются многократно, не приводя при этом к вызовам самих себя");
+                                break;
+
+                            case RandomNumberCommand:
+                                Random random = new Random();
+                                int RandomNumber = random.Next(0, 1000);
+                                Console.WriteLine($"Рандомное число - {RandomNumber}");
+                                break;
+
+                            case ClearConsole:
+                                Console.Clear();
+                                break;
+
+                            default:
+                                Console.WriteLine("Такой команды нет");
+                                break;
+                            }
+                        }
+                 }
+
+                 Console.WriteLine("Программа завершена");
+        }
+    }
+}
