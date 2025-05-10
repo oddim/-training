@@ -23,7 +23,7 @@ namespace ConsoleApp5
             {
                 if (i % firstDivisor == 0 || i % secondDivisor == 0)
                 {
-                    sumNumbers = sumNumbers + i;
+                    sumNumbers += i;
                 }
             }
 
