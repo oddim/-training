@@ -18,13 +18,13 @@ namespace ConsoleApp6
             const string EndProgrammCommand = "Выход";
             
             string userInput = "";
-            bool isRunning = userInput != EndProgrammCommand;
+            bool isRun = userInput != EndProgrammCommand;
 
             Random random = new Random();
-            int RandomNumber;
+            int randomNumber;
             int maxRandomNumber = 1000;
 
-            while(isRunning)
+            while(isRun)
             {
                 Console.WriteLine($"Введите нужную команду для исполнения \n \n Для толкования некоторых слов есть команды - {CommandShowСonstantInfo}, {CommandShowVariableInfo}, {CommandShowIterationInfo} \n Чтобы получить рандомное число - {RandomNumberCommand} \n Если хотите очистить консоль - {ClearingConsoleCommand} \n Для завершения программы - {EndProgrammCommand}");
                 userInput = Console.ReadLine();
@@ -44,8 +44,8 @@ namespace ConsoleApp6
                         break;
 
                     case RandomNumberCommand:
-                        RandomNumber = random.Next(0, maxRandomNumber);
-                        Console.WriteLine($"Рандомное число - {RandomNumber}");
+                        randomNumber = random.Next(0, maxRandomNumber);
+                        Console.WriteLine($"Рандомное число - {randomNumber}");
                         break;
 
                     case ClearingConsoleCommand:
@@ -53,7 +53,7 @@ namespace ConsoleApp6
                         break;
 
                     case EndProgrammCommand:
-                        isRunning = false;
+                        isRun = false;
                         Console.WriteLine("Программа завершена");
                         break;
 
