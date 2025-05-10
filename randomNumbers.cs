@@ -16,8 +16,8 @@ namespace ConsoleApp5
             int secondDivisor = 5;
             int maxNumber = 100;
 
-            Random rand = new Random();
-            number = rand.Next(0,maxNumber);
+            Random random = new Random();
+            number = random.Next(0,maxNumber);
 
             for (int i = 0; i <= number; i++)
             {
