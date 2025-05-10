@@ -10,54 +10,56 @@ namespace ConsoleApp6
     {
         static void Main(string[] args)
         {
-            const string InterpretationWordСonstant = "Константа"; // Постоянная величина в ряду изменяющихся
-            const string InterpretationWordVariable = "Переменная" ;//Переменная (программирование) — поименованная, либо адресуемая иным способом область памяти
-            const string InterpretatioWordIteration = "Итерация";//организация обработки данных, при которой действия повторяются многократно, не приводя при этом к вызовам самих себя
+            const string InterpretationWordСonstantCommand = "Константа"; 
+            const string InterpretationWordVariableCommand = "Переменная" ;
+            const string InterpretatioWordIterationCommand = "Итерация";
             const string RandomNumberCommand = "Рандом";
-            const string ClearConsole = "Очистить консоль";
-            const string EndProgramm = "Выход";
-
+            const string ClearingConsoleCommand = "Очистить консоль";
+            const string EndProgrammCommand = "Выход";
+            
             string userInput = "";
-                           
-                while (userInput != EndProgramm)
+            
+            Random random = new Random();
+            int outputRandomNumber;
+            int maxOutputRandomNumber = 1000;
+
+            while(userInput != EndProgrammCommand)
+            {
+                Console.WriteLine($"Введите нужную команду для исполнения \n \n Для толкования некоторых слов есть команды - {InterpretationWordСonstantCommand}, {InterpretationWordVariableCommand}, {InterpretatioWordIterationCommand} \n Чтобы получить рандомное число - {RandomNumberCommand} \n Если хотите очистить консоль - {ClearingConsoleCommand} \n Для завершения программы - {EndProgrammCommand}");
+                userInput = Console.ReadLine();
+
+                switch (userInput)
                 {
-                    Console.WriteLine("Введите нужную команду для исполнения \n \n Для толкования некоторых слов есть команды - 'Константа', 'Переменная', 'Итерация' \n Чтобы получить рандомное число - 'Рандом' \n Если хотите очистить консоль - 'Очистить консоль' \n Для завершения программы - 'Выход'");
-                    userInput = Console.ReadLine();
+                    case InterpretationWordСonstantCommand:
+                        Console.WriteLine("Константа - это постоянная величина в ряду изменяющихся ");
+                        break;
 
-                        if (userInput != EndProgramm)
-                        {
-                            switch (userInput)
-                            {
-                            case InterpretationWordСonstant:
-                                Console.WriteLine("Константа - это постоянная величина в ряду изменяющихся ");
-                                break;
+                    case InterpretationWordVariableCommand:
+                        Console.WriteLine("Переменная (программирование) — поименованная, либо адресуемая иным способом область памяти");
+                        break;
 
-                            case InterpretationWordVariable:
-                                Console.WriteLine("Переменная (программирование) — поименованная, либо адресуемая иным способом область памяти");
-                                break;
+                    case InterpretatioWordIterationCommand:
+                        Console.WriteLine("Итерация - это организация обработки данных, при которой действия повторяются многократно, не приводя при этом к вызовам самих себя");
+                        break;
 
-                            case InterpretatioWordIteration:
-                                Console.WriteLine("Итерация - это организация обработки данных, при которой действия повторяются многократно, не приводя при этом к вызовам самих себя");
-                                break;
+                    case RandomNumberCommand:
+                        outputRandomNumber = random.Next(0, maxOutputRandomNumber);
+                        Console.WriteLine($"Рандомное число - {outputRandomNumber}");
+                        break;
 
-                            case RandomNumberCommand:
-                                Random random = new Random();
-                                int RandomNumber = random.Next(0, 1000);
-                                Console.WriteLine($"Рандомное число - {RandomNumber}");
-                                break;
+                    case ClearingConsoleCommand:
+                        Console.Clear();
+                        break;
 
-                            case ClearConsole:
-                                Console.Clear();
-                                break;
+                    case EndProgrammCommand:
+                        Console.WriteLine("Программа завершена");
+                        break;
 
-                            default:
-                                Console.WriteLine("Такой команды нет");
-                                break;
-                            }
-                        }
-                 }
-
-                 Console.WriteLine("Программа завершена");
+                    default:
+                        Console.WriteLine("Такой команды нет");
+                        break;
+                }
+             }
         }
     }
 }
