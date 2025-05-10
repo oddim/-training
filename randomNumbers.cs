@@ -27,7 +27,7 @@ namespace ConsoleApp5
                 }
             }
 
-            Console.WriteLine($"Рандомное число: {sumNumbers}");
+            Console.WriteLine($"Сумма чисел кратные 3 или 5, и меньше рандомного числа (диапазон рандомного числа (0,100)) : {sumNumbers}");
         }
     }
 }
