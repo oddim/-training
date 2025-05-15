@@ -1,0 +1,158 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            float rublesAmount = 10000;
+            float dollarsAmount = 100;
+            float eurosAmount = 100;
+
+            float rublesToDollars = 82;
+            float dollarsToRubles = 0.0125f; 
+
+            float rublesToEuros = 94;
+            float eurosToRubles = 0.011f;
+
+            float dollarsToEuros = 1.14f;
+            float eurosToDollars = 0.87f;
+
+            float sumUserConvert;
+
+            string convertCurrencyCommand = "";
+            
+            bool isRun = true;  
+
+            while (isRun)
+            {
+                Console.WriteLine($"Ваш баланс: \n Рубли {rublesAmount} \n Доллары {dollarsAmount} \n Евро {eurosAmount}");
+                
+                Console.WriteLine($"\n\n Для конвертации часть баланса с одной валюты в другую введите команду." +
+                    $"\n'рубли в доллары' - для получения долларов засчёт рублей" +
+                    $"\n'доллары в рубли' - для получения рублей засчёт долларов" +
+                    $"\n'рубли в евро' - для получения евро засчёт рублей" +
+                    $"\n'евро в рубли' - для получения рублей засчет евро" +
+                    $"\n'евро в доллары' - для получения долларов засчёт евро" +
+                    $"\n'доллары в евро' - для получения евро засчет долларов" +
+                    $"\n\n'выйти' - команда для выхода. \n\n");
+                
+                convertCurrencyCommand = Console.ReadLine();
+
+                if (isRun == true)
+                {
+                    switch (convertCurrencyCommand)
+                        {
+                        case "рубли в доллары":
+                            Console.WriteLine("Сколько долларов хотите получить вместо рублей? ");
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+
+                            if (rublesAmount > sumUserConvert * rublesToDollars)
+                            {
+                                rublesAmount -= sumUserConvert * rublesToDollars;
+                                dollarsAmount += sumUserConvert;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nНедостаточно средств для конвертирования\n\n");
+                            }
+                            break;
+
+                        case "доллары в рубли":
+                            Console.WriteLine("Сколько рублей хотите получить вместо долларов? ");
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+
+                            if (dollarsAmount > sumUserConvert * dollarsToRubles)
+                            {
+                                dollarsAmount -= sumUserConvert * dollarsToRubles;
+                                rublesAmount += sumUserConvert;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nНедостаточно средств для конвертирования\n\n");
+                            }
+                            break;
+
+                        case "рубли в евро":
+                            Console.WriteLine("Сколько евро хотите получить вместо рублей? ");
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+
+                            if (rublesAmount > sumUserConvert * rublesToEuros)
+                            {
+                                rublesAmount -= sumUserConvert * rublesToEuros;
+                                eurosAmount += sumUserConvert;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nНедостаточно средств для конвертирования\n\n");
+                            }
+                            break;
+
+                        case "евро в рубли":
+                            Console.WriteLine("Сколько рублей хотите получить вместо евро? ");
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+
+                            if (eurosAmount > sumUserConvert * eurosToRubles)
+                            {
+                                eurosAmount -= sumUserConvert * eurosToRubles;
+                                rublesAmount += sumUserConvert;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nНедостаточно средств для конвертирования\n\n");
+                            }
+                            break;
+
+                        case "евро в доллары":
+                            Console.WriteLine("Сколько евро хотите получить вместо долларов? ");
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+
+                            if (dollarsAmount > sumUserConvert * dollarsToEuros)
+                            {
+                                dollarsAmount -= sumUserConvert * dollarsToEuros;
+                                eurosAmount += sumUserConvert;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nНедостаточно средств для конвертирования\n\n");
+                            }
+                            break;
+
+                        case "доллары в евро":
+                            Console.WriteLine("Сколько долларов хотите получить вместо евро? ");
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+
+                            if (eurosAmount > sumUserConvert * eurosToDollars)
+                            {
+                                eurosAmount -= sumUserConvert * eurosToDollars;
+                                dollarsAmount += sumUserConvert;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nНедостаточно средств для конвертирования\n\n");
+                            }
+                            break;
+
+                        case "выйти":
+                            isRun = false;
+                            Console.WriteLine("Вы вышли из программы");
+                            break;
+
+                        default:
+                            Console.WriteLine("\nТакой комманды нет \n");
+                            break;
+                        }
+                }
+                else
+                {
+                 Console.WriteLine("Вы вышли из программы");
+                }
+            }
+        }
+    }
+}
