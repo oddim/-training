@@ -10,7 +10,15 @@ namespace ConsoleApp7
     {
         static void Main(string[] args)
         {
-            float rublesAmount = 10000;
+            const string CommandRublesToDollars = "рубли в доллары";
+            const string CommandDollarsToRubles = "доллары в рубли";
+            const string CommandRublesToEuros = "рубли в евро";
+            const string CommandEurosToRubles = "евро в рубли";
+            const string CommandDollarsToEuros = "доллары в евро";
+            const string CommandEurosToDollars = "евро в доллары";
+            const string CommandEndProgramm = "выйти";
+
+            float rublesAmount = 82;
             float dollarsAmount = 100;
             float eurosAmount = 100;
 
@@ -26,14 +34,6 @@ namespace ConsoleApp7
             float sumUserConvert;
 
             string convertCurrencyCommand = "";
-
-            const string CommandRublesToDollars = "рубли в доллары";
-            const string CommandDollarsToRubles = "доллары в рубли";
-            const string CommandRublesToEuros = "рубли в евро";
-            const string CommandEurosToRubles = "евро в рубли";
-            const string CommandDollarsToEuros = "доллары в евро";
-            const string CommandEurosToDollars = "евро в доллары";
-            const string CommandEndProgramm = "выйти";
 
             bool isRun = true;  
 
@@ -58,11 +58,11 @@ namespace ConsoleApp7
                         {
                         case CommandRublesToDollars:
                             Console.WriteLine("Сколько долларов хотите получить вместо рублей? ");
-                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine()) * rublesToDollars;
 
-                            if (rublesAmount > sumUserConvert * rublesToDollars)
+                            if (rublesAmount >= sumUserConvert)
                             {
-                                rublesAmount -= sumUserConvert * rublesToDollars;
+                                rublesAmount -= sumUserConvert;
                                 dollarsAmount += sumUserConvert;
                             }
                             else
@@ -73,11 +73,11 @@ namespace ConsoleApp7
 
                         case CommandDollarsToRubles:
                             Console.WriteLine("Сколько рублей хотите получить вместо долларов? ");
-                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine()) * dollarsToRubles;
 
-                            if (dollarsAmount > sumUserConvert * dollarsToRubles)
+                            if (dollarsAmount >= sumUserConvert)
                             {
-                                dollarsAmount -= sumUserConvert * dollarsToRubles;
+                                dollarsAmount -= sumUserConvert;
                                 rublesAmount += sumUserConvert;
                             }
                             else
@@ -88,11 +88,11 @@ namespace ConsoleApp7
 
                         case CommandRublesToEuros:
                             Console.WriteLine("Сколько евро хотите получить вместо рублей? ");
-                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine()) * rublesToEuros;
 
-                            if (rublesAmount > sumUserConvert * rublesToEuros)
+                            if (rublesAmount >= sumUserConvert)
                             {
-                                rublesAmount -= sumUserConvert * rublesToEuros;
+                                rublesAmount -= sumUserConvert;
                                 eurosAmount += sumUserConvert;
                             }
                             else
@@ -103,11 +103,11 @@ namespace ConsoleApp7
 
                         case CommandEurosToRubles:
                             Console.WriteLine("Сколько рублей хотите получить вместо евро? ");
-                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine()) * eurosToRubles;
 
-                            if (eurosAmount > sumUserConvert * eurosToRubles)
+                            if (eurosAmount >= sumUserConvert)
                             {
-                                eurosAmount -= sumUserConvert * eurosToRubles;
+                                eurosAmount -= sumUserConvert;
                                 rublesAmount += sumUserConvert;
                             }
                             else
@@ -118,11 +118,11 @@ namespace ConsoleApp7
 
                         case CommandDollarsToEuros:
                             Console.WriteLine("Сколько евро хотите получить вместо долларов? ");
-                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine()) * dollarsToEuros;
 
-                            if (dollarsAmount > sumUserConvert * dollarsToEuros)
+                            if (dollarsAmount >= sumUserConvert)
                             {
-                                dollarsAmount -= sumUserConvert * dollarsToEuros;
+                                dollarsAmount -= sumUserConvert;
                                 eurosAmount += sumUserConvert;
                             }
                             else
@@ -133,11 +133,11 @@ namespace ConsoleApp7
 
                         case CommandEurosToDollars:
                             Console.WriteLine("Сколько долларов хотите получить вместо евро? ");
-                            sumUserConvert = Convert.ToSingle(Console.ReadLine());
+                            sumUserConvert = Convert.ToSingle(Console.ReadLine()) * eurosToDollars;
 
-                            if (eurosAmount > sumUserConvert * eurosToDollars)
+                            if (eurosAmount >= sumUserConvert)
                             {
-                                eurosAmount -= sumUserConvert * eurosToDollars;
+                                eurosAmount -= sumUserConvert;
                                 dollarsAmount += sumUserConvert;
                             }
                             else
