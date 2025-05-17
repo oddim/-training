@@ -13,15 +13,14 @@ namespace ConsoleApp8
         {
             string stringRectangle = "";
 
-            int sideSymbolsName = 2;
-
             Console.WriteLine("Введите символ из которого будет построен прямоугольник: ");
-            string symbolRectangles = Console.ReadLine();
+            char symbolRectangles = Console.ReadKey(true).KeyChar;
 
             Console.WriteLine("Введите имя, которое будет внутри прямоуголника: ");
             string nameInRectangle = Console.ReadLine();
+            string middleLine = symbolRectangles + nameInRectangle + symbolRectangles;
 
-            for (int i = 0; i < nameInRectangle.Length + sideSymbolsName; i++) 
+            for (int i = 0; i < middleLine.Length; i++) 
             {
                 stringRectangle += $"{symbolRectangles}";
             }
