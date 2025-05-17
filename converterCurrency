@@ -26,7 +26,15 @@ namespace ConsoleApp7
             float sumUserConvert;
 
             string convertCurrencyCommand = "";
-            
+
+            const string CommandRublesToDollars = "рубли в доллары";
+            const string CommandDollarsToRubles = "доллары в рубли";
+            const string CommandRublesToEuros = "рубли в евро";
+            const string CommandEurosToRubles = "евро в рубли";
+            const string CommandDollarsToEuros = "доллары в евро";
+            const string CommandEurosToDollars = "евро в доллары";
+            const string CommandEndProgramm = "выйти";
+
             bool isRun = true;  
 
             while (isRun)
@@ -34,12 +42,12 @@ namespace ConsoleApp7
                 Console.WriteLine($"Ваш баланс: \n Рубли {rublesAmount} \n Доллары {dollarsAmount} \n Евро {eurosAmount}");
                 
                 Console.WriteLine($"\n\n Для конвертации часть баланса с одной валюты в другую введите команду." +
-                    $"\n'рубли в доллары' - для получения долларов засчёт рублей" +
-                    $"\n'доллары в рубли' - для получения рублей засчёт долларов" +
-                    $"\n'рубли в евро' - для получения евро засчёт рублей" +
-                    $"\n'евро в рубли' - для получения рублей засчет евро" +
-                    $"\n'евро в доллары' - для получения долларов засчёт евро" +
-                    $"\n'доллары в евро' - для получения евро засчет долларов" +
+                    $"\n{CommandRublesToDollars} - для получения долларов засчёт рублей" +
+                    $"\n{CommandDollarsToRubles} - для получения рублей засчёт долларов" +
+                    $"\n{CommandRublesToEuros} - для получения евро засчёт рублей" +
+                    $"\n{CommandEurosToRubles} - для получения рублей засчет евро" +
+                    $"\n{CommandDollarsToEuros} - для получения долларов засчёт евро" +
+                    $"\n{CommandEurosToDollars} - для получения евро засчет долларов" +
                     $"\n\n'выйти' - команда для выхода. \n\n");
                 
                 convertCurrencyCommand = Console.ReadLine();
@@ -48,7 +56,7 @@ namespace ConsoleApp7
                 {
                     switch (convertCurrencyCommand)
                         {
-                        case "рубли в доллары":
+                        case CommandRublesToDollars:
                             Console.WriteLine("Сколько долларов хотите получить вместо рублей? ");
                             sumUserConvert = Convert.ToSingle(Console.ReadLine());
 
@@ -63,7 +71,7 @@ namespace ConsoleApp7
                             }
                             break;
 
-                        case "доллары в рубли":
+                        case CommandDollarsToRubles:
                             Console.WriteLine("Сколько рублей хотите получить вместо долларов? ");
                             sumUserConvert = Convert.ToSingle(Console.ReadLine());
 
@@ -78,7 +86,7 @@ namespace ConsoleApp7
                             }
                             break;
 
-                        case "рубли в евро":
+                        case CommandRublesToEuros:
                             Console.WriteLine("Сколько евро хотите получить вместо рублей? ");
                             sumUserConvert = Convert.ToSingle(Console.ReadLine());
 
@@ -93,7 +101,7 @@ namespace ConsoleApp7
                             }
                             break;
 
-                        case "евро в рубли":
+                        case CommandEurosToRubles:
                             Console.WriteLine("Сколько рублей хотите получить вместо евро? ");
                             sumUserConvert = Convert.ToSingle(Console.ReadLine());
 
@@ -108,7 +116,7 @@ namespace ConsoleApp7
                             }
                             break;
 
-                        case "евро в доллары":
+                        case CommandDollarsToEuros:
                             Console.WriteLine("Сколько евро хотите получить вместо долларов? ");
                             sumUserConvert = Convert.ToSingle(Console.ReadLine());
 
@@ -123,7 +131,7 @@ namespace ConsoleApp7
                             }
                             break;
 
-                        case "доллары в евро":
+                        case CommandEurosToDollars:
                             Console.WriteLine("Сколько долларов хотите получить вместо евро? ");
                             sumUserConvert = Convert.ToSingle(Console.ReadLine());
 
@@ -138,7 +146,7 @@ namespace ConsoleApp7
                             }
                             break;
 
-                        case "выйти":
+                        case CommandEndProgramm:
                             isRun = false;
                             Console.WriteLine("Вы вышли из программы");
                             break;
