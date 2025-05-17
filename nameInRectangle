@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp8
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string stringRectangle = "";
+
+            int sideSymbolsName = 2;
+
+            Console.WriteLine("Введите символ из которого будет построен прямоугольник: ");
+            string symbolRectangles = Console.ReadLine();
+
+            Console.WriteLine("Введите имя, которое будет внутри прямоуголника: ");
+            string nameInRectangle = Console.ReadLine();
+
+            for (int i = 0; i < nameInRectangle.Length + sideSymbolsName; i++) 
+            {
+                stringRectangle += $"{symbolRectangles}";
+            }
+
+            Console.WriteLine(stringRectangle + $"\n{symbolRectangles}{nameInRectangle}{symbolRectangles} \n" + stringRectangle);
+        }
+    }
+}
