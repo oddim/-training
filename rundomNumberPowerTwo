@@ -10,24 +10,27 @@ namespace ConsoleApp12
     {
         static void Main(string[] args)
         {
-            int taskNumber = 2;
-            int powerNumber = 0;
-            int checkNumber = taskNumber;
+            int baseDegree = 2;
+            int powerNumber = 1;
+            int testNumber = baseDegree;
 
+            int maxRandom = 100;
             int numberRandom;
             Random random = new Random();
-            numberRandom = random.Next(1000);
+            numberRandom = random.Next(maxRandom);
 
-            for (int i = 1; i <= numberRandom * taskNumber; i++) 
-            { 
-                if (i % checkNumber == 0)
-                    {
-                        powerNumber++;
-                        checkNumber = checkNumber * taskNumber;
-                    }
+            while (testNumber < numberRandom * baseDegree) 
+            {
+                if (testNumber % baseDegree == 0)
+                {
+                    powerNumber++;
+                    testNumber = testNumber * baseDegree;
+                }
+                
+                testNumber++;
             }
-                        
-            Console.WriteLine($"{powerNumber} - минимальная степень числа {taskNumber}, превосходящую заданное число {numberRandom}");
+
+            Console.WriteLine($"{powerNumber} - минимальная степень числа {baseDegree}, превосходящую заданное число {numberRandom}");
         }
     }
 }
