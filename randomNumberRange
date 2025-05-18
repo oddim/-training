@@ -13,10 +13,10 @@ namespace ConsoleApp11
             int minN = 10;
             int maxN = 26;
 
-            int minMultiplesN = 50;
-            int maxMultiplesN = 150;
+            int smallestRange = 50;
+            int largestRange = 150;
 
-            int amountMultiplesN = 0;
+            int amountNInRange = 0;
 
             int numberN;
             Random random = new Random();
@@ -24,19 +24,16 @@ namespace ConsoleApp11
             
             Console.WriteLine($"Числа кратные N = {numberN}:");
             
-            for (int i = numberN; i <= maxMultiplesN; i += numberN)
+            for (int i = numberN; i <= largestRange; i += numberN)
             {
-
-                if ( i  >= minMultiplesN)
+                if ( i  >= smallestRange)
                 {
-                    amountMultiplesN++;
+                    amountNInRange++;
                     Console.WriteLine(i);
                 }
-
-                numberN =+ numberN;
             }
 
-            Console.WriteLine($"{amountMultiplesN} - чисел кратные N = {numberN} в диапазоне {minMultiplesN}:{maxMultiplesN}");
+            Console.WriteLine($"{amountNInRange} - чисел кратные N = {numberN} в диапазоне {smallestRange}:{largestRange}");
         }
     }
 }
