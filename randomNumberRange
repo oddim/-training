@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int minN = 10;
+            int maxN = 26;
+
+            int minMultiplesN = 50;
+            int maxMultiplesN = 150;
+
+            int amountMultiplesN = 0;
+
+            int numberN;
+            Random random = new Random();
+            numberN = random.Next(minN, maxN);
+            
+            Console.WriteLine($"Числа кратные N = {numberN}:");
+            
+            for (int i = numberN; i <= maxMultiplesN; i += numberN)
+            {
+
+                if ( i  >= minMultiplesN)
+                {
+                    amountMultiplesN++;
+                    Console.WriteLine(i);
+                }
+
+                numberN =+ numberN;
+            }
+
+            Console.WriteLine($"{amountMultiplesN} - чисел кратные N = {numberN} в диапазоне {minMultiplesN}:{maxMultiplesN}");
+        }
+    }
+}
