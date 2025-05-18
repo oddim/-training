@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int taskNumber = 2;
+            int powerNumber = 0;
+            int checkNumber = taskNumber;
+
+            int numberRandom;
+            Random random = new Random();
+            numberRandom = random.Next(1000);
+
+            for (int i = 1; i <= numberRandom * taskNumber; i++) 
+            { 
+                if (i % checkNumber == 0)
+                    {
+                        powerNumber++;
+                        checkNumber = checkNumber * taskNumber;
+                    }
+            }
+                        
+            Console.WriteLine($"{powerNumber} - минимальная степень числа {taskNumber}, превосходящую заданное число {numberRandom}");
+        }
+    }
+}
