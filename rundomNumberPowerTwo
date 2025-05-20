@@ -19,15 +19,10 @@ namespace ConsoleApp12
             Random random = new Random();
             numberRandom = random.Next(maxRandom);
 
-            while (testNumber < numberRandom * baseDegree) 
+            while (testNumber < numberRandom) 
             {
-                if (testNumber % baseDegree == 0)
-                {
-                    powerNumber++;
-                    testNumber = testNumber * baseDegree;
-                }
-                
-                testNumber++;
+                powerNumber++;
+                testNumber = testNumber * baseDegree;
             }
 
             Console.WriteLine($"{powerNumber} - минимальная степень числа {baseDegree}, превосходящую заданное число {numberRandom}");
