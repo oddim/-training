@@ -110,29 +110,31 @@ namespace bossFight
                         canBossAttack = true;
                         break;
                 }
+
                 if (canBossAttack)
                 {
                     healthHero -= damageBoss1;
                     Console.WriteLine($"\n Из-за вашей неосторожности вам нанесли урон - {damageBoss1}");
                 }
+
                 Random random = new Random();
                 damageBoss2 = random.Next(0, maxDamageBoss + 1);
                 healthHero -= damageBoss2;
 
-                Console.WriteLine($" Босс нанес вам урон - {damageBoss2}");
-                
-                if (healthBoss <= 0 && healthHero <= 0)
-                {
-                    Console.WriteLine("\n\n\n  Ничья");
-                }
-                else if (healthHero <= 0)
-                {
-                    Console.WriteLine("\n\n\n  Босс победил");
-                }
-                else if (healthBoss <= 0)
-                {
-                    Console.WriteLine("\n\n\n  Вы победили");
-                }
+                Console.WriteLine($" Босс нанес вам урон - {damageBoss2}"); 
+            }
+            
+            if (healthBoss <= 0 && healthHero <= 0)
+            {
+                Console.WriteLine("\n\n\n  Ничья");
+            }
+            else if (healthHero <= 0)
+            {
+                Console.WriteLine("\n\n\n  Босс победил");
+            }
+            else if (healthBoss <= 0)
+            {
+                Console.WriteLine("\n\n\n  Вы победили");
             }
         }
     }
