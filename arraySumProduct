@@ -1,48 +1,43 @@
 using System;
 
-namespace arraySumProduct
+namespace ConsoleApp15
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int[,] array = new int[4,4];
+            int[,] numbers = new int[4,4];
 
-            int firstColumn = 1;
-            int firstColumnProduct = 1;
+            int columnNumbers = 1;
+            int columnNumbersProduct = 1;
 
-            int secondLine = 2;
-            int secondLineSum = 0;
+            int lineNumbers = 2;
+            int lineNumbersSum = 0;
 
             Random random = new Random();
             int maxRandom = 5;
 
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < numbers.GetLength(0); i++)
             {
-                for (int j = 0; j < array.GetLength(1); j++)
+                for (int j = 0; j < numbers.GetLength(1); j++)
                 {
-                    array[i,j] = random.Next(1, maxRandom + 1);
-                    Console.Write(array[i,j] + " ");                 
+                    numbers[i, j] = random.Next(1, maxRandom + 1);
+                    Console.Write(numbers[i, j] + " ");
                 }
                 Console.WriteLine();
             }
 
-            for (int i = 0;i < array.GetLength(0); i++)
+            for (int i = 0; i < numbers.GetLength(0); i++)
             {
-                for (int j = 0;j < array.GetLength(1); j++)
-                {
-                    if (j == (firstColumn - 1))
-                    {
-                        firstColumnProduct *= array[i,j];
-                    }
-
-                    if (i == (secondLine - 1))
-                    {
-                        secondLineSum += array[i,j];
-                    }
-                }
+                lineNumbersSum += numbers[lineNumbers - 1,i];
+            }     
+            
+            for (int i = 0; i < numbers.GetLength(1); i++)
+            {
+                columnNumbersProduct *= numbers[i, columnNumbers - 1];
             }
-            Console.WriteLine($"Произведение первого столбаца = {firstColumnProduct}\nСумма второй строки = {secondLineSum}");
+            
+            Console.WriteLine($"Сумма {lineNumbers} строки = {lineNumbersSum}\nПроизведение {columnNumbers} столбца = {columnNumbersProduct}");
         }
     }
 }
