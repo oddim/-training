@@ -15,13 +15,13 @@ namespace ConsoleApp15
             int lineNumbersSum = 0;
 
             Random random = new Random();
-            int maxRandom = 5;
+            int maxNumbersRandom = 5;
 
             for (int i = 0; i < numbers.GetLength(0); i++)
             {
                 for (int j = 0; j < numbers.GetLength(1); j++)
                 {
-                    numbers[i, j] = random.Next(1, maxRandom + 1);
+                    numbers[i, j] = random.Next(1, maxNumbersRandom + 1);
                     Console.Write(numbers[i, j] + " ");
                 }
                 Console.WriteLine();
