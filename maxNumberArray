@@ -1,0 +1,60 @@
+using System;
+
+namespace maxNumberArray
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] numbers = new int[10, 10];
+
+            Random random = new Random();
+            int maxNumbersRandom = 9;
+
+            Console.SetCursorPosition(0, 2);
+            Console.WriteLine("Исходная матрица:");
+
+            for (int i = 0; i < numbers.GetLength(0); i++)
+            {
+                for (int j = 0; j < numbers.GetLength(1); j++)
+                {
+                    numbers[i, j] = random.Next(0, maxNumbersRandom + 1);
+                    Console.Write(numbers[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            int maxNumber = 0;
+            
+            for (int i = 0; i < numbers.GetLength(0); i++)
+            {
+                for(int j = 0; j < numbers.GetLength(1); j++)
+                {
+                    if (maxNumber < numbers[i, j])
+                    {
+                        maxNumber = numbers[i, j];
+                    }
+                }
+            }
+
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine($"Наибольший элемент матрицы - {maxNumber}");
+            
+            Console.SetCursorPosition(0,14);
+            Console.WriteLine("Полученная матрцица:");
+
+            for (int i = 0; i < numbers.GetLength(0); i++)
+            {
+                for (int j = 0; j < numbers.GetLength(1); j++)
+                {
+                    if (numbers[i, j] == maxNumber)
+                    {
+                        numbers[i,j] = 0;
+                    }
+                    Console.Write(numbers[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
