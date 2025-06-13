@@ -1,6 +1,6 @@
 using System;
 
-namespace dinamicArray
+namespace ConsoleApp21
 {
     internal class Program
     {
@@ -11,27 +11,26 @@ namespace dinamicArray
 
             int[] numbers1 = new int[0];
             int[] numbers2 = new int[0];
-            
-            bool isRun = true;
-            bool isSwitch = true;
 
+            bool isRun = true;
+           
             string userInput = null;
 
             int currentIndex = 1;
             int sumAllNumbers = 0;
 
-            while (isRun) 
+            while (isRun)
             {
                 Console.Write($"Заполните массив. Для получения суммы элементов массива введите {SumCommand}. Если хотите выйти из программы, то введите {ExitCommand}. \n\nМассив: ");
-               
+
                 for (int i = 0; i < numbers1.Length; i++)
                 {
                     Console.Write(numbers1[i] + " ");
                 }
                 userInput = Console.ReadLine();
- 
+
                 switch (userInput)
-                { 
+                {
                     case SumCommand:
                         Console.Clear();
 
@@ -40,7 +39,7 @@ namespace dinamicArray
                         for (int i = 0; i < numbers1.Length; i++)
                         {
                             sumAllNumbers += numbers1[i];
-                         
+
                             Console.Write(numbers1[i] + " ");
                         }
                         Console.WriteLine();
@@ -48,38 +47,24 @@ namespace dinamicArray
 
                         sumAllNumbers = 0;
                         continue;
+
                     case ExitCommand:
                         isRun = false;
                         break;
+
                     default:
-                        if (isSwitch)
-                        {
-                            isSwitch = false;
-
-                            numbers1 = new int[currentIndex];
-
-                            for (int i = 0; i < currentIndex - 1; i++)
-                            {
-                                numbers1[i] = numbers2[i];
-                            }
-                            numbers1[currentIndex - 1] = Convert.ToInt32(userInput);
-                        }
-                        else 
-                        {
-                            isSwitch = true;
-
+                        
                             numbers2 = new int[currentIndex];
 
                             for (int i = 0; i < currentIndex - 1; i++)
                             {
                                 numbers2[i] = numbers1[i];
                             }
-                            numbers2[currentIndex - 1] = Convert.ToInt32(userInput);
-
+                            numbers2[numbers2.Length - 1] = Convert.ToInt32(userInput);
                             numbers1 = numbers2;
-                        }
+                        
                         break;
-                }     
+                }
                 Console.Clear();
 
                 currentIndex++;
