@@ -53,7 +53,6 @@ namespace ConsoleApp21
                         break;
 
                     default:
-                        
                             numbers2 = new int[currentIndex];
 
                             for (int i = 0; i < currentIndex - 1; i++)
@@ -62,7 +61,6 @@ namespace ConsoleApp21
                             }
                             numbers2[numbers2.Length - 1] = Convert.ToInt32(userInput);
                             numbers1 = numbers2;
-                        
                         break;
                 }
                 Console.Clear();
