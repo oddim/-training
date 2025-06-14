@@ -9,43 +9,39 @@ namespace ConsoleApp21
             const string SumCommand = "sum";
             const string ExitCommand = "exit";
 
-            int[] numbers1 = new int[0];
-            int[] numbers2 = new int[0];
+            int[] numbers = new int[0];
 
             bool isRun = true;
            
             string userInput = null;
 
-            int currentIndex = 1;
-            int sumAllNumbers = 0;
-
             while (isRun)
             {
                 Console.Write($"Заполните массив. Для получения суммы элементов массива введите {SumCommand}. Если хотите выйти из программы, то введите {ExitCommand}. \n\nМассив: ");
 
-                for (int i = 0; i < numbers1.Length; i++)
+                for (int i = 0; i < numbers.Length; i++)
                 {
-                    Console.Write(numbers1[i] + " ");
+                    Console.Write(numbers[i] + " ");
                 }
                 userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
                     case SumCommand:
+                        int sumAllNumbers = 0;
+
                         Console.Clear();
 
                         Console.Write("\n\nМассив: ");
 
-                        for (int i = 0; i < numbers1.Length; i++)
+                        for (int i = 0; i < numbers.Length; i++)
                         {
-                            sumAllNumbers += numbers1[i];
+                            sumAllNumbers += numbers[i];
 
-                            Console.Write(numbers1[i] + " ");
+                            Console.Write(numbers[i] + " ");
                         }
                         Console.WriteLine();
                         Console.WriteLine(sumAllNumbers + " - сумма элементов массива \n\n");
-
-                        sumAllNumbers = 0;
                         continue;
 
                     case ExitCommand:
@@ -53,19 +49,17 @@ namespace ConsoleApp21
                         break;
 
                     default:
-                            numbers2 = new int[currentIndex];
+                        int[] numbersAdditional = new int[numbers.Length + 1];
 
-                            for (int i = 0; i < currentIndex - 1; i++)
+                            for (int i = 0; i < numbers.Length; i++)
                             {
-                                numbers2[i] = numbers1[i];
+                            numbersAdditional[i] = numbers[i];
                             }
-                            numbers2[numbers2.Length - 1] = Convert.ToInt32(userInput);
-                            numbers1 = numbers2;
+                        numbersAdditional[numbersAdditional.Length - 1] = Convert.ToInt32(userInput);
+                            numbers = numbersAdditional;
                         break;
                 }
                 Console.Clear();
-
-                currentIndex++;
             }
             Console.WriteLine("Программа завершена");
         }
