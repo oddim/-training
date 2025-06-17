@@ -36,7 +36,6 @@ namespace iterationNumbers
                     else
                     {
                         maxIteration = 0;
-
                     }
 
                     if (maxIteration > currentMaaxIteration)
