@@ -44,7 +44,6 @@ namespace iterationNumbers
                         indexMaxIteration = i;
                     }
                 }
-
                     maxIteration = 0;
             }     
 
