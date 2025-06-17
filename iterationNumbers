@@ -47,6 +47,7 @@ namespace iterationNumbers
 
                     maxIteration = 0;
             }     
+
             Console.WriteLine();
             Console.WriteLine(numbers[indexMaxIteration] + " - число, которое самое больше раз повторяется");
             Console.WriteLine(currentMaaxIteration + " - количество повторений");
