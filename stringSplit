@@ -1,0 +1,18 @@
+using System;
+
+namespace stringSplit
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string text = ("Объектно-Ориентированное Программирование — это парадигма программирования, в которой код организуется в виде объектов, взаимодействующих друг с другом");
+            string[] arrayWords = text.Split(' ');
+
+            foreach (var word in arrayWords)
+            {
+                Console.WriteLine($" {word}");
+            }
+        }
+    }
+}
