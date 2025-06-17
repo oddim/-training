@@ -38,12 +38,14 @@ namespace iterationNumbers
                         maxIteration = 0;
 
                     }
+
                     if (maxIteration > currentMaaxIteration)
                     {
                         currentMaaxIteration = maxIteration;
                         indexMaxIteration = i;
                     }
                 }
+
                     maxIteration = 0;
             }     
             Console.WriteLine();
