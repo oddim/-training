@@ -1,0 +1,57 @@
+using System;
+
+namespace sortingNumbers
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = new int[30];
+
+            Console.WriteLine("Размер массива - " + numbers.Length);
+
+            Random random = new Random();
+            int maxRandomNumbers = 100;
+
+            Console.WriteLine("Данный массив:");
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = random.Next(0, maxRandomNumbers + 1);
+                Console.Write(numbers[i] + " ");
+            }
+
+            int currentMaxNumber = 0;
+            int indexMaxNumber = 0;
+            int swapNumber = 0;
+            int currentLength = numbers.Length;
+
+            Console.WriteLine();
+            Console.WriteLine("Отсортированный массив:");
+
+            while(currentLength > 0)
+            {
+                for (int j = 0; j < currentLength; j++)
+                {
+                    if (numbers[j] > currentMaxNumber)
+                    {
+                        currentMaxNumber = numbers[j];
+                        indexMaxNumber = j;
+                    }
+                }
+
+                swapNumber = numbers[currentLength - 1];
+                numbers[currentLength - 1] = currentMaxNumber;
+                numbers[indexMaxNumber] = swapNumber;
+                currentLength--;
+                currentMaxNumber = 0;
+                indexMaxNumber = 0;
+            }
+
+            for (int i = 0;i < numbers.Length; i++) 
+            {
+                Console.Write(numbers[i] + " ");            
+            }
+        }
+    }
+}
