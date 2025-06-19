@@ -1,0 +1,40 @@
+using System;
+
+namespace shiftArray
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите количество сдвигов элементов массива влево ");
+            int amountShift = Convert.ToInt32(Console.ReadLine());
+            
+            int[] numbers = { 1, 2, 3, 4, 5 };
+
+            for(int i = 0; i < numbers.Length;i++)
+            {
+                Console.Write(numbers[i] + " ");
+            }
+
+            int temporaryNumber = 0;
+
+            for (int i = 0; i < amountShift; i++) 
+            { 
+                temporaryNumber = numbers[0];
+
+                for (int j = 0; j < numbers.Length - 1; j++)
+                {
+                    numbers[j] = numbers[j + 1];
+                }
+                numbers[numbers.Length - 1] = temporaryNumber;
+            }
+
+            Console.WriteLine($" - массив сдвинулся на {amountShift}");
+
+            for (int i = 0;i < numbers.Length; i++) 
+            {
+                Console.Write(numbers[i] + " ");
+            }
+        }
+    }
+}
