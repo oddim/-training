@@ -55,7 +55,7 @@ namespace ConsoleApp21
                             {
                             numbersAdditional[i] = numbers[i];
                             }
-                        numbersAdditional[numbersAdditional.Length - 1] = Convert.ToInt32(userInput);
+                            numbersAdditional[numbersAdditional.Length - 1] = Convert.ToInt32(userInput);
                             numbers = numbersAdditional;
                         break;
                 }
