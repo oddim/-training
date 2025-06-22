@@ -51,12 +51,12 @@ namespace ConsoleApp21
                     default:
                         int[] numbersAdditional = new int[numbers.Length + 1];
 
-                            for (int i = 0; i < numbers.Length; i++)
-                            {
-                            numbersAdditional[i] = numbers[i];
-                            }
-                            numbersAdditional[numbersAdditional.Length - 1] = Convert.ToInt32(userInput);
-                            numbers = numbersAdditional;
+                        for (int i = 0; i < numbers.Length; i++)
+                        {
+                        numbersAdditional[i] = numbers[i];
+                        }
+                        numbersAdditional[numbersAdditional.Length - 1] = Convert.ToInt32(userInput);
+                        numbers = numbersAdditional;
                         break;
                 }
                 Console.Clear();
