@@ -41,6 +41,7 @@ namespace ConsoleApp21
 
                             Console.Write(numbers[i] + " ");
                         }
+
                         Console.WriteLine();
                         Console.WriteLine(sumAllNumbers + " - сумма элементов массива \n\n");
                         continue;
