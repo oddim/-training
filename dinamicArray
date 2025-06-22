@@ -23,6 +23,7 @@ namespace ConsoleApp21
                 {
                     Console.Write(numbers[i] + " ");
                 }
+
                 userInput = Console.ReadLine();
 
                 switch (userInput)
@@ -55,12 +56,15 @@ namespace ConsoleApp21
                         {
                         numbersAdditional[i] = numbers[i];
                         }
+
                         numbersAdditional[numbersAdditional.Length - 1] = Convert.ToInt32(userInput);
                         numbers = numbersAdditional;
                         break;
                 }
+
                 Console.Clear();
             }
+
             Console.WriteLine("Программа завершена");
         }
     }
