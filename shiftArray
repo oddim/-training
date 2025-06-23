@@ -8,7 +8,7 @@ namespace shiftArray
         {
             Console.Write("Введите количество сдвигов элементов массива влево ");
             int amountShift = Convert.ToInt32(Console.ReadLine());
-            
+
             int[] numbers = { 1, 2, 3, 4, 5 };
 
             for(int i = 0; i < numbers.Length;i++)
@@ -16,6 +16,8 @@ namespace shiftArray
                 Console.Write(numbers[i] + " ");
             }
 
+            amountShift = amountShift % numbers.Length;  
+            
             int temporaryNumber = 0;
 
             for (int i = 0; i < amountShift; i++) 
