@@ -1,6 +1,6 @@
 using System;
 
-namespace ConsoleApp24
+namespace ConsoleApp25
 {
     internal class Program
     {
@@ -15,89 +15,43 @@ namespace ConsoleApp24
             }
 
             const string openningBracket = "(";
-            const string closingBracket = ")";
-            
-            bool isRun = true;
-
-            string[] temporaryBrackets = brackets;
 
             int deepBrackets = 0;
             int maxDeepBrackets = 0;
-
+            int amountOpenning = 0;
+            int amountClosing = 0;
+           
             for (int n = 0; n <= brackets.Length - 1; n++)
             {
                 if (brackets[n] == openningBracket)
                 {
-                    deepBrackets++;
+                    amountOpenning++;
                 }
                 else
                 {
-                    deepBrackets--;
+                    amountClosing++;
                 }
 
                 if (maxDeepBrackets < deepBrackets)
                 {
                     maxDeepBrackets = deepBrackets;
                 }
-            }
 
-            int pairBrackets = 2;
-            int amountPairBrackets = brackets.Length ;
-            
-            for (int j = 0; j < brackets.Length; j++)
-            {
-                Console.Write(brackets[j] + " ");
-            }
+                deepBrackets = amountOpenning - amountClosing;
 
-            int amountCycle = maxDeepBrackets;
-
-            while (isRun)
-            {
-                if (amountCycle == 0)
+                if (deepBrackets < 0) 
                 {
-                    isRun = false;
+                    n = brackets.Length;
                 }
-
-                if (brackets.Length % pairBrackets == 0)
-                {
-                    for (int i = 0; i < brackets.Length - 1; i++)
-                    {
-                        if (brackets[i] == openningBracket && brackets[i + 1] == closingBracket)
-                        {
-                            brackets[i] = "null";
-                            brackets[i + 1] = "null";
-                            amountPairBrackets -= pairBrackets;
-                        }
-                    }
-
-                    temporaryBrackets = new string[amountPairBrackets];
-
-                    int amountBracket = 0;
-
-                    for (int k = 0; k < brackets.Length; k++)
-                    {
-                        if (brackets[k] == openningBracket || brackets[k] == closingBracket)
-                        {
-                            temporaryBrackets[amountBracket] = brackets[k];
-                            amountBracket++;
-                        }
-                    }
-
-                    brackets = temporaryBrackets;
-                }
-
-                amountCycle--;  
             }
 
-            Console.WriteLine();
-
-            if (brackets.Length == 0) 
+            if (deepBrackets == 0 && maxDeepBrackets > 0) 
             {
-                Console.WriteLine($" Глубина скобочного выражения - {maxDeepBrackets}. \n Строка корректна.");
+                Console.WriteLine($"Строка корректна. Максимальная глубина вложенности скобок - {maxDeepBrackets} ");
             }
             else 
             {
-                Console.WriteLine("Строка некорректна");   
+                Console.WriteLine("Строка некорректна");
             }
         }
     }
