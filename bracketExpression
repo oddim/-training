@@ -1,0 +1,104 @@
+using System;
+
+namespace ConsoleApp24
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string lineBrackets = "(()(()))";
+            string[] brackets = new string[lineBrackets.Length];
+
+            for (int n = 0; n < lineBrackets.Length; n++)
+            {
+                brackets[n] = Convert.ToString(lineBrackets[n]);
+            }
+
+            const string openningBracket = "(";
+            const string closingBracket = ")";
+            
+            bool isRun = true;
+
+            string[] temporaryBrackets = brackets;
+
+            int deepBrackets = 0;
+            int maxDeepBrackets = 0;
+
+            for (int n = 0; n <= brackets.Length - 1; n++)
+            {
+                if (brackets[n] == openningBracket)
+                {
+                    deepBrackets++;
+                }
+                else
+                {
+                    deepBrackets--;
+                }
+
+                if (maxDeepBrackets < deepBrackets)
+                {
+                    maxDeepBrackets = deepBrackets;
+                }
+            }
+
+            int pairBrackets = 2;
+            int amountPairBrackets = brackets.Length ;
+            
+            for (int j = 0; j < brackets.Length; j++)
+            {
+                Console.Write(brackets[j] + " ");
+            }
+
+            int amountCycle = maxDeepBrackets;
+
+            while (isRun)
+            {
+                if (amountCycle == 0)
+                {
+                    isRun = false;
+                }
+
+                if (brackets.Length % pairBrackets == 0)
+                {
+                    for (int i = 0; i < brackets.Length - 1; i++)
+                    {
+                        if (brackets[i] == openningBracket && brackets[i + 1] == closingBracket)
+                        {
+                            brackets[i] = "null";
+                            brackets[i + 1] = "null";
+                            amountPairBrackets -= pairBrackets;
+                        }
+                    }
+
+                    temporaryBrackets = new string[amountPairBrackets];
+
+                    int amountBracket = 0;
+
+                    for (int k = 0; k < brackets.Length; k++)
+                    {
+                        if (brackets[k] == openningBracket || brackets[k] == closingBracket)
+                        {
+                            temporaryBrackets[amountBracket] = brackets[k];
+                            amountBracket++;
+                        }
+                    }
+
+                    brackets = temporaryBrackets;
+                }
+
+                amountCycle--;  
+            }
+
+            Console.WriteLine();
+
+            if (brackets.Length == 0) 
+            {
+                Console.WriteLine($" Глубина скобочного выражения - {maxDeepBrackets}. \n Строка корректна.");
+            }
+            else 
+            {
+                Console.WriteLine("Строка некорректна");   
+            }
+        }
+    }
+}
