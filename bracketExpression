@@ -6,30 +6,33 @@ namespace ConsoleApp25
     {
         static void Main(string[] args)
         {
-            string lineBrackets = "(()(()))";
+            const string openningBracket = "(";
+            const string closingBracket = ")";
+            
+            string lineBrackets = "ф()((ф(ы))вв())";
             string[] brackets = new string[lineBrackets.Length];
 
-            for (int n = 0; n < lineBrackets.Length; n++)
+            for (int i = 0; i < lineBrackets.Length; i++)
             {
-                brackets[n] = Convert.ToString(lineBrackets[n]);
+                brackets[i] = Convert.ToString(lineBrackets[i]);
             }
-
-            const string openningBracket = "(";
 
             int deepBrackets = 0;
             int maxDeepBrackets = 0;
-            int amountOpenning = 0;
-            int amountClosing = 0;
-           
-            for (int n = 0; n <= brackets.Length - 1; n++)
+            
+            for (int i = 0; i < brackets.Length; i++)
             {
-                if (brackets[n] == openningBracket)
+                if (brackets[i] == openningBracket)
                 {
-                    amountOpenning++;
+                    deepBrackets++;
+                }
+                else if (brackets[i] == closingBracket)
+                {
+                    deepBrackets--;
                 }
                 else
                 {
-                    amountClosing++;
+                    continue;
                 }
 
                 if (maxDeepBrackets < deepBrackets)
@@ -37,19 +40,17 @@ namespace ConsoleApp25
                     maxDeepBrackets = deepBrackets;
                 }
 
-                deepBrackets = amountOpenning - amountClosing;
-
-                if (deepBrackets < 0) 
+                if (deepBrackets < 0)
                 {
-                    n = brackets.Length;
+                    i = brackets.Length;
                 }
             }
 
-            if (deepBrackets == 0 && maxDeepBrackets > 0) 
+            if (deepBrackets == 0)
             {
                 Console.WriteLine($"Строка корректна. Максимальная глубина вложенности скобок - {maxDeepBrackets} ");
             }
-            else 
+            else
             {
                 Console.WriteLine("Строка некорректна");
             }
